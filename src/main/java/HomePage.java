@@ -15,4 +15,20 @@ public class HomePage extends BasePage {
 //        clickWithJS(jsAlerts, 0, 200); for small screens
         return new AlertsPage(driver);
     }
+
+    @FindBy(css = "[href='/dropdown']")
+    WebElement dropdown;
+
+    public DropdownPage getDropdown() {
+        click(dropdown);
+        return new DropdownPage(driver);
+    }
+
+    @FindBy(css = "[href='/redirector']")
+    WebElement redirector;
+
+    public RedirectionPage getRedirection() {
+        click(redirector);
+        return new RedirectionPage(driver);
+    }
 }
